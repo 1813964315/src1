@@ -11,6 +11,11 @@ def bag(n, c, w, v, s, last_time):
             if j >= w[i - 1] and value[i][j] < value[i - 1][j - w[i - 1]] + v[i - 1]:
                 value[i][j] = value[i - 1][j - w[i - 1]] + v[i - 1]
     print("最大价值为：", value[i][j])
+    file_handle = open('result.txt', mode='a')
+    file_handle.write('动态规划法\n')
+    file_handle.write(s)
+    file_handle.write('  最大值：')
+    file_handle.write(str(value[i][j]))
     j = c
     i = n
     y1 = [0 for i in range(1, n+1)]
@@ -24,9 +29,6 @@ def bag(n, c, w, v, s, last_time):
     print("解向量为：", y1)
     current_time = time.time()
     print("耗时： {}".format(current_time - last_time))
-    file_handle = open('result.txt', mode='a')
-    file_handle.write('动态规划法\n')
-    file_handle.write(s)
     file_handle.write('  解向量：[')
     for i in y1:
         file_handle.write(str(i))
@@ -100,7 +102,7 @@ if __name__ == '__main__':
     print("       -------------------------------------")
     num = 0
     while num != 10:
-        num = int(input("输入你的选择:"))
+        num = int(input("选择文件:"))
         match num:
             case 0: zhi("data/beibao0.in")
             case 1: zhi("data/beibao1.in")
