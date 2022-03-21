@@ -14,7 +14,7 @@ def paint1():
     print("       --------------------------------------")
     num = 0
     while num != 10:
-        num = int(input("输入你的选择:"))
+        num = int(input("选择文件:"))
         match num:
             case 0: zhi("data/beibao0.in")
             case 1: zhi("data/beibao1.in")
@@ -95,7 +95,7 @@ def paint2():
     print("       --------------------------------------")
     num = 0
     while num != 10:
-        num = int(input("输入你的选择:"))
+        num = int(input("选择文件:"))
         match num:
             case 0: zhi1("data/beibao0.in")
             case 1: zhi1("data/beibao1.in")
@@ -164,7 +164,7 @@ while s != 6:
     print("       *                                   *")
     print("       *   5.绘制柱状图        6.退出系统      *")
     print("       *************************************")
-    s = int(input("输入你的选择:"))
+    s = int(input("选择算法:"))
     match s:
         case 1: os.system("python  DP.py")
         case 2: os.system("python  Greedy.py")
