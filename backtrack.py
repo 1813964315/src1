@@ -43,12 +43,14 @@ def zhi(s):
     # bestV = 0
     backtrack(0, w, v, n, c, x)
     print("最大价值为：", bestV)
-    print("解向量为：", bestx)
-    current_time = time.time()
-    print("耗时： {}".format(current_time - last_time))
     file_handle = open('result.txt', mode='a')
     file_handle.write('回溯法\n')
     file_handle.write(s)
+    file_handle.write('  最大值：')
+    file_handle.write(str(bestV))
+    print("解向量为：", bestx)
+    current_time = time.time()
+    print("耗时： {}".format(current_time - last_time))
     file_handle.write('  解向量：[')
     for i in bestx:
         file_handle.write(str(i))
@@ -107,7 +109,7 @@ if __name__ == '__main__':
     num = 0
     s = " "
     while num != 10:
-        num = int(input("输入你的选择:"))
+        num = int(input("选择文件:"))
         match num:
             case 0: zhi("data/beibao0.in")
             case 1: zhi("data/beibao1.in")
