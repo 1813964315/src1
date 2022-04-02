@@ -70,7 +70,8 @@ def zhi(str):
     plt.legend()
     plt.yticks(())
     plt.title('散点图')
-    plt.savefig('./src/scatter.jpg')  # 保存图片
+    str = str[5:]
+    plt.savefig('./src/scatter_'+ str + '.png')  # 保存图片
     plt.show()
 
 
@@ -140,7 +141,8 @@ def zhi1(str):
     vw(c, n, w, v, x, y)
     y_pos = np.arange(len(w))+1
     ax.barh(y_pos, y, color='b', align="center")
-    plt.savefig('./src/barh.jpg')  # 保存图片
+    str = str[5:]
+    plt.savefig('./src/barch_' + str + '.png')  # 保存图片
     plt.show()
 
 def sort(x,y):
